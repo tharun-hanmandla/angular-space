@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  buttonText = ''
   title = 'form-validations';
+  onClick(selectedButton: string) {
+    selectedButton == 'login' ? this.buttonText = selectedButton : this.buttonText = selectedButton
+  }
 }
