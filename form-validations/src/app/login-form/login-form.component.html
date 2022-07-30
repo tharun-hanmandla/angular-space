@@ -1,1 +1,22 @@
-<p>login-form works!</p>
+<form>
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input type="email" required ngModel name="email" #email="ngModel" (change)="log(email)" class="form-control"
+            id="exampleInputEmail1" aria-describedby="emailHelp">
+        <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+            <div *ngIf="email.errors?.['required']">Email is Required</div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Password</label>
+        <input type="password" required minlength="3" maxlength="10" pattern="admin" ngModel name="password"
+            #password="ngModel" (change)="log(password)" class="form-control" id="exampleInputPassword1">
+        <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+
+            <div *ngIf="password.errors?.['required']">Password is Required</div>
+            <div *ngIf="password.errors?.['minlength']">Password should be minimum 3 characters</div>
+            <div *ngIf="password.errors?.['pattern']">Password Pattern doesn't match</div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
