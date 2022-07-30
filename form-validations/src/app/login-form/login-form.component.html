@@ -18,5 +18,10 @@
             <div *ngIf="password.errors?.['pattern']">Password Pattern doesn't match</div>
         </div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" ngModel name="check" #checkbox="ngModel">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <div>{{f.value | json}}</div>
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
 </form>
