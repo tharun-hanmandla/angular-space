@@ -1,0 +1,33 @@
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <div class="form-group">
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" required ngModel name="email" #email="ngModel" (change)="log(email)"
+                class="form-control" id="email" aria-describedby="emailHelp">
+            <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                <div *ngIf="email.errors?.['required']">Email is Required</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" required minlength="3" maxlength="10" pattern="admin" ngModel name="password"
+                #password="ngModel" (change)="log(password)" class="form-control" id="password">
+            <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+
+                <div *ngIf="password.errors?.['required']">Password is Required</div>
+                <div *ngIf="password.errors?.['minlength']">Password should be minimum 3 characters</div>
+                <div *ngIf="password.errors?.['pattern']">Password Pattern doesn't match</div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="check" ngModel name="check" #checkbox="ngModel">
+            <label class="form-check-label" for="check">Check me out</label>
+        </div>
+    </div>
+    <div>{{f.value | json}}</div>
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">Submit</button>
+</form>
