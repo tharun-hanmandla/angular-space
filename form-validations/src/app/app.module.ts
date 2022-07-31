@@ -10,7 +10,8 @@ import { RegistrationFormComponent } from './registration-form/registration-form
   declarations: [
     AppComponent,
     LoginFormComponent,
-    RegistrationFormComponent
+    RegistrationFormComponent,
+
   ],
   imports: [
     BrowserModule,
