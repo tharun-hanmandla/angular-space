@@ -13,6 +13,11 @@ export class RegistrationFormComponent implements OnInit {
     { id: 3, language: 'english' }
 
   ];
+
+  radioButtons = [
+    { id: 1, gender: 'Male' },
+    { id: 2, gender: 'Female' }
+  ];
   constructor() { }
 
   ngOnInit(): void {
