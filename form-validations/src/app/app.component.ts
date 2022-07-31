@@ -7,8 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   buttonText = ''
+  signupForm = true;
   title = 'form-validations';
   onClick(selectedButton: string) {
-    selectedButton == 'login' ? this.buttonText = selectedButton : this.buttonText = selectedButton
+    selectedButton == 'login' ? (this.buttonText = selectedButton,
+      this.signupForm = false) : (this.buttonText = selectedButton, this.signupForm = false)
   }
 }

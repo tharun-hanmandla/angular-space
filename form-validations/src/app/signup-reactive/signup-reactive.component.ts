@@ -18,4 +18,14 @@ export class SignupReactiveComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get email() {
+    return this.form.get('email');
+  }
+  get firstname() {
+    return this.form.get('firstname');
+  }
+  get lastname() {
+    return this.form.get('lastname');
+  }
+
 }

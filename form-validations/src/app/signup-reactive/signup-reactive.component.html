@@ -2,7 +2,7 @@
     <div class="form-floating mb-3">
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
             formControlName="email">
-        <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid" class="alert alert-danger">Email is
+        <div *ngIf="email?.touched && email?.invalid" class="alert alert-danger">Email is
             Required.</div>
         <label for="floatingInput">Email address</label>
         <!-- <div class="alert alert-danger " *ngIf="email.touched && !email.valid">Email is Required</div> -->
@@ -11,7 +11,7 @@
     <div class="form-floating mb-3">
         <input type="firstName" required class="form-control" id="floatingInput" placeholder="firstname"
             formControlName="firstname">
-        <div *ngIf="form.get('firstname')?.touched && form.get('firstname')?.invalid" class="alert alert-danger">First
+        <div *ngIf="firstname?.touched && firstname?.invalid" class="alert alert-danger">First
             is
             Required.</div>
         <label for="floatingInput">First Name</label>
@@ -21,12 +21,12 @@
     <div class="form-floating mb-3">
         <input type="lastName" required class="form-control" id="floatingInput" placeholder="lastname"
             formControlName="lastname">
-        <div *ngIf="form.get('lastname')?.touched && form.get('lastname')?.invalid" class="alert alert-danger">Last
+        <div *ngIf="lastname?.touched && lastname?.invalid" class="alert alert-danger">Last
             Name is
             Required.</div>
         <label for="floatingInput">last Name</label>
         <!-- <div class="alert alert-danger " *ngIf="lastName.touched && !lastName.valid">Last Name is Required</div> -->
     </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div>{{form.value | json}}</div>
+    <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
 </form>
