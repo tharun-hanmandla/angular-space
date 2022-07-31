@@ -1,11 +1,24 @@
-<form>
+<form [formGroup]="form">
     <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <input type="email" required class="form-control" id="floatingInput" placeholder="name@example.com"
+            formControlName="email">
         <label for="floatingInput">Email address</label>
+        <!-- <div class="alert alert-danger " *ngIf="email.touched && !email.valid">Email is Required</div> -->
     </div>
-    <div class="form-floating">
-        <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-        <label for="floatingPassword">Password</label>
+
+    <div class="form-floating mb-3">
+        <input type="firstName" required class="form-control" id="floatingInput" placeholder="firstname"
+            formControlName="firstname">
+        <label for="floatingInput">First Name</label>
+        <!-- <div class="alert alert-danger " *ngIf="firstName.touched && !firstName.valid">First Name is Required</div> -->
     </div>
+
+    <div class="form-floating mb-3">
+        <input type="lastName" required class="form-control" id="floatingInput" placeholder="lastname"
+            formControlName="lastname">
+        <label for="floatingInput">last Name</label>
+        <!-- <div class="alert alert-danger " *ngIf="lastName.touched && !lastName.valid">Last Name is Required</div> -->
+    </div>
+
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
