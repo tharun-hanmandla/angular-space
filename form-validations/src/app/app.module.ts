@@ -7,18 +7,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
+import { PostsComponent } from './posts/posts.component';
+import { HttpClientModule } from '@angular/common/http'
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginFormComponent,
     RegistrationFormComponent,
-    SignupReactiveComponent
+    SignupReactiveComponent,
+    PostsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

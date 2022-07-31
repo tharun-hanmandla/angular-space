@@ -28,4 +28,9 @@ export class SignupReactiveComponent implements OnInit {
     return this.form.get('lastname');
   }
 
+  signUp() {
+    this.form.setErrors({
+      invalidData: true
+    });
+  }
 }

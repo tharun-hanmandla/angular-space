@@ -1,4 +1,7 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="signUp()">
+    <!-- <div class="alert alert-danger" *ngIf="form.errors">
+        Not a Correct Data
+    </div> -->
     <div class="form-floating mb-3">
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
             formControlName="email">
@@ -17,7 +20,7 @@
             <div *ngIf="firstname?.errors?.['required']">First Name is Required</div>
             <div *ngIf="firstname?.errors?.['minlength']">First Name should be
                 {{firstname?.errors?.['minlength'].requiredLength}} characters</div>
-            <div *ngIf="firstname?.errors?.['pattern']">First Name pattern doesn't match</div>
+            <!-- <div *ngIf="firstname?.errors?.['pattern']">First Name pattern doesn't match</div> -->
         </div>
         <label for="floatingInput">First Name</label>
         <!-- <div class="alert alert-danger " *ngIf="firstName.touched && !firstName.valid">First Name is Required</div> -->
@@ -30,7 +33,7 @@
             <div *ngIf="lastname?.errors?.['required']">Last Name is Required</div>
             <div *ngIf="lastname?.errors?.['minlength']">Last Name should be
                 {{lastname?.errors?.['minlength'].requiredLength}} characters</div>
-            <div *ngIf="lastname?.errors?.['pattern']">Last Name pattern doesn't match</div>
+            <!-- <div *ngIf="lastname?.errors?.['pattern']">Last Name pattern doesn't match</div> -->
         </div>
         <label for="floatingInput">last Name</label>
         <!-- <div class="alert alert-danger " *ngIf="lastName.touched && !lastName.valid">Last Name is Required</div> -->

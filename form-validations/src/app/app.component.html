@@ -3,8 +3,8 @@
   <div class="mt-3 mb-3">
 
     <button type="submit" class="btn btn-primary" (click)="onClick('login')">Login</button>
-
     <button type="submit" class="btn btn-primary" (click)="onClick('register')">Register</button>
+    <button type="submit" class="btn btn-primary" (click)="onClick('posts')">Posts</button>
 
   </div>
   <div *ngIf="buttonText=='login'">
@@ -16,4 +16,8 @@
   <div class="mb-3" *ngIf="signupForm">
     <app-signup-reactive></app-signup-reactive>
   </div>
+  <div class="mb-3" *ngIf="buttonText=='posts'">
+    <app-posts></app-posts>
+  </div>
+
 </div>

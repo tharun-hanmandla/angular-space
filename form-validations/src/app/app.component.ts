@@ -10,7 +10,18 @@ export class AppComponent {
   signupForm = true;
   title = 'form-validations';
   onClick(selectedButton: string) {
-    selectedButton == 'login' ? (this.buttonText = selectedButton,
-      this.signupForm = false) : (this.buttonText = selectedButton, this.signupForm = false)
+
+    if (selectedButton == 'login') {
+      this.buttonText = selectedButton;
+      this.signupForm = false
+    }
+    else if (selectedButton == 'register') {
+      this.buttonText = selectedButton;
+      this.signupForm = false
+    }
+    else {
+      this.buttonText = selectedButton;
+      this.signupForm = false
+    }
   }
 }
