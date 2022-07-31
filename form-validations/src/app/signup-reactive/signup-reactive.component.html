@@ -2,8 +2,10 @@
     <div class="form-floating mb-3">
         <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com"
             formControlName="email">
-        <div *ngIf="email?.touched && email?.invalid" class="alert alert-danger">Email is
-            Required.</div>
+        <div *ngIf="email?.touched && email?.invalid" class="alert alert-danger">
+            <div *ngIf="email?.errors?.['required']">Email is Required</div>
+
+        </div>
         <label for="floatingInput">Email address</label>
         <!-- <div class="alert alert-danger " *ngIf="email.touched && !email.valid">Email is Required</div> -->
     </div>
@@ -11,9 +13,12 @@
     <div class="form-floating mb-3">
         <input type="firstName" required class="form-control" id="floatingInput" placeholder="firstname"
             formControlName="firstname">
-        <div *ngIf="firstname?.touched && firstname?.invalid" class="alert alert-danger">First
-            is
-            Required.</div>
+        <div *ngIf="firstname?.touched && firstname?.invalid" class="alert alert-danger">
+            <div *ngIf="firstname?.errors?.['required']">First Name is Required</div>
+            <div *ngIf="firstname?.errors?.['minlength']">First Name should be
+                {{firstname?.errors?.['minlength'].requiredLength}} characters</div>
+            <div *ngIf="firstname?.errors?.['pattern']">First Name pattern doesn't match</div>
+        </div>
         <label for="floatingInput">First Name</label>
         <!-- <div class="alert alert-danger " *ngIf="firstName.touched && !firstName.valid">First Name is Required</div> -->
     </div>
@@ -21,9 +26,12 @@
     <div class="form-floating mb-3">
         <input type="lastName" required class="form-control" id="floatingInput" placeholder="lastname"
             formControlName="lastname">
-        <div *ngIf="lastname?.touched && lastname?.invalid" class="alert alert-danger">Last
-            Name is
-            Required.</div>
+        <div *ngIf="lastname?.touched && lastname?.invalid" class="alert alert-danger">
+            <div *ngIf="lastname?.errors?.['required']">Last Name is Required</div>
+            <div *ngIf="lastname?.errors?.['minlength']">Last Name should be
+                {{lastname?.errors?.['minlength'].requiredLength}} characters</div>
+            <div *ngIf="lastname?.errors?.['pattern']">Last Name pattern doesn't match</div>
+        </div>
         <label for="floatingInput">last Name</label>
         <!-- <div class="alert alert-danger " *ngIf="lastName.touched && !lastName.valid">Last Name is Required</div> -->
     </div>
