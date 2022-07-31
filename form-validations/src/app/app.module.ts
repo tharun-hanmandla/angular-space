@@ -1,33 +1,23 @@
-import { CoursesService } from './courses.service';
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { CourseComponent } from './course/course.component';
-import { CoursesComponent } from './courses/courses.component';
-import { FavoriteComponent } from './favorite/favorite.component';
-import { PanelComponent } from './panel/panel.component';
-import { LikeComponent } from './like/like.component';
-import { ContactFormComponent } from './contact-form/contact-form.component';
+
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { RegistrationFormComponent } from './registration-form/registration-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CourseComponent,
-    CoursesComponent,
-    FavoriteComponent,
-    PanelComponent,
-    LikeComponent,
-    ContactFormComponent
+    LoginFormComponent,
+    RegistrationFormComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule
   ],
-  providers: [CoursesService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
