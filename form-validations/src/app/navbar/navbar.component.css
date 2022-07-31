@@ -1,0 +1,7 @@
+.navbar>.container-fluid {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: center;
+}

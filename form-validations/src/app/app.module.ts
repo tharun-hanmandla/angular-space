@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { SignupReactiveComponent } from './signup-reactive/signup-reactive.component';
 
 
@@ -9,6 +10,9 @@ import { LoginFormComponent } from './login-form/login-form.component';
 import { RegistrationFormComponent } from './registration-form/registration-form.component';
 import { PostsComponent } from './posts/posts.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -18,13 +22,22 @@ import { HttpClientModule } from '@angular/common/http';
     LoginFormComponent,
     RegistrationFormComponent,
     SignupReactiveComponent,
-    PostsComponent
+    PostsComponent,
+    NavbarComponent,
+    HomeComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent },
+      { path: 'profile', component: ProfileComponent },
+      { path: 'posts', component: PostsComponent }
+
+    ])
 
   ],
   providers: [],
